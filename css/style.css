@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.box {
+  height: 300px;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  background-color: #eee;
+}
+
+/*ハンバーガーメニュー*/
+#hm-icon {
+  position: fixed; /*画面全体から見て常に固定*/
+  right: 20px;
+  top: 20px;
+  z-index: 10; /*zは奥行き*/
+}
+
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block; /*spanタグを横並びにする*/
+  transition: all.4s; /*4秒かけて表示*/
+  box-sizing: border-box;
+}
+
+.menu-trigger {
+  position: relative; /*子要素の位置を指定するために親要素に記述*/
+  width: 50px;
+  height: 44px;
+}
+
+.menu-trigger span {
+  position: absolute; /*親要素を基準に子要素を指定する*/
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px; /*角に丸みをつける*/
+}
+
+.menu-trigger span:nth-child(1) {
+  top: 0;
+}
+.menu-trigger span:nth-child(2) {
+  top: 20px;
+}
+.menu-trigger span:nth-child(3) {
+  bottom: 0;
+}
+
+.menu-trigger.activ span:nth-child(1) {
+  -webkit-transform: translateY(20px) rotate(-45deg);
+  transform: translateY(20px) rotate(-45deg);
+  background-color: #fff;
+}
+.menu-trigger.activ span:nth-child(2) {
+  opacity: 0;
+}
+.menu-trigger.activ span:nth-child(3) {
+  -webkit-transform: translateY(-20px) rotate(45deg);
+  transform: translateY(-20px) rotate(45deg);
+  background-color: #fff;
+}
+
+/*spメニュー*/
+#sp-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  color: #fff;
+  width: 100%;
+  min-height: 100%; /*最低100％*/
+  display: none; /*隠す*/
+  z-index: 9; /*ハンバーガーメニューのz-indexより小さくすることで奥に置ける*/
+}
+
+#sp-menu li {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#sp-menu a {
+  color: #fff;
+  text-decoration: none; /*リンクの下線を消す*/
+  font-weight: bold; /*フォントを太字にする*/
+}
