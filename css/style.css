@@ -30,7 +30,7 @@ h1 {
 .menu-trigger,
 .menu-trigger span {
   display: inline-block; /*spanタグを横並びにする*/
-  transition: all.4s; /*4秒かけて表示*/
+  transition: all .4s; /*4秒かけて表示*/
   box-sizing: border-box;
 }
 
@@ -59,15 +59,15 @@ h1 {
   bottom: 0;
 }
 
-.menu-trigger.activ span:nth-child(1) {
+.menu-trigger.active span:nth-child(1) {
   -webkit-transform: translateY(20px) rotate(-45deg);
   transform: translateY(20px) rotate(-45deg);
   background-color: #fff;
 }
-.menu-trigger.activ span:nth-child(2) {
+.menu-trigger.active span:nth-child(2) {
   opacity: 0;
 }
-.menu-trigger.activ span:nth-child(3) {
+.menu-trigger.active span:nth-child(3) {
   -webkit-transform: translateY(-20px) rotate(45deg);
   transform: translateY(-20px) rotate(45deg);
   background-color: #fff;
